@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       screens: {
         main: "1440px",
       },
       fontFamily: {
-        'sans': ['Montserrat', 'sans-serif']
+        'sans': ["Montserrat", "sans-serif"],
       },
     },
   },
