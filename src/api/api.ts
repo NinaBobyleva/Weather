@@ -12,9 +12,9 @@ export async function getGeo(cityNameInput: string) {
     return response.data;
   }
 
-export async function getCurrentWeather({lat, lon}: {lat: number | undefined, lon: number | undefined}) {
+export async function getCurrentWeather({latitude, longitude}: {latitude: number | undefined, longitude: number | undefined}) {
   const response = await axios.get(
-    `${BASE_URL}data/3.0/onecall?lat=${lat}&lon=${lon}&lang=ru&units=metric&exclude=minutely,hourly,alerts&appid=${token}`
+    `${BASE_URL}data/3.0/onecall?lat=${latitude}&lon=${longitude}&lang=ru&units=metric&exclude=minutely,hourly,alerts&appid=${token}`
   );
 
   return response.data;

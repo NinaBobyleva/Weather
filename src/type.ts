@@ -13,6 +13,11 @@ export type CityName = {
 };
 
 export type WeatherDataType = {
+  current: WeatherCurrentType;
+  timezone_offset: number;
+};
+
+export type WeatherCurrentType = {
   humidity: number;
   temp: number;
   dt: number;
