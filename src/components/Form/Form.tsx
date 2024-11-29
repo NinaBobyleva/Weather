@@ -14,7 +14,7 @@ export function Form({
     }
 
   return (
-    <form onSubmit={handleNewCityForm} className="flex flex-row gap-4 justify-center">
+    <form onSubmit={handleNewCityForm} className="flex flex-row gap-4 justify-center mt-8">
       <div className="">
         <div className="">
           <input

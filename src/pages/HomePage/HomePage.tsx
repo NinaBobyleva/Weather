@@ -1,41 +1,45 @@
 import { useEffect, useState } from "react";
 import { Form } from "../../components/Form/Form";
 import { Wrapper } from "../../components/Wrapper/Wrapper";
-import { getCurrentWeather } from "../../api/api";
+import { getGeo } from "../../api/api";
 import { WeatherBlock } from "../../components/WeatherBlock/WeatherBlock";
-import { CityType } from "../../type";
+import { GeoDataType } from "../../type";
+import { timeFormat } from "../../utils/helpers";
 
 export function HomePage() {
   const [cityNameInput, setCityNameInput] = useState("");
-  const [weatherData, setWeatherData] = useState([]);
-  const [city, setCity] = useState<CityType | null>(null);
-  console.log(weatherData);
-  console.log(city?.name);
+  const [geoData, setGeoData] = useState<GeoDataType | null>(null);
+  
+  console.log(geoData);
 
-  // if (city) {
-  //   const cityName = city.name;
-  //   console.log(cityName);
-  // }
+  const cityName = geoData?.local_names;
 
   useEffect(() => {
-    const getDataCurrentWeather = async () => {
-      getCurrentWeather(cityNameInput).then((res) => {
-        setWeatherData(res.current);
-        setCity(res.location);
+    const getDataGeo = async () => {
+      getGeo(cityNameInput).then((res) => {
+        console.log(res);
+        setGeoData(res[0]);
       });
     };
 
-    getDataCurrentWeather();
+    getDataGeo();
   }, [cityNameInput]);
+
+  const time = timeFormat(1732887133);
+  console.log(time);
   return (
     <Wrapper>
       <div className="">
-        <h1 className="font-montserrat font-medium sm:text-[60px] mt-[260px] text-center">
+        <h1 className="font-montserrat font-medium sm:text-[60px] mt-[240px] mb-8 text-center">
           Прогноз погоды в вашем городе
         </h1>
         <Form setCityName={setCityNameInput} />
         <div>
-          <WeatherBlock cityName={city?.name} />
+          <WeatherBlock
+            lat={geoData?.lat}
+            lon={geoData?.lon}
+            cityName={cityName?.ru}
+          />
         </div>
       </div>
     </Wrapper>
