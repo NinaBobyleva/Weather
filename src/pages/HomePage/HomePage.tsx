@@ -14,7 +14,6 @@ export function HomePage() {
   useEffect(() => {
     const getDataGeo = async () => {
       getGeo(newCityName).then((res) => {
-        console.log(res);
         setGeoData(res[0]);
       });
     };
@@ -24,8 +23,8 @@ export function HomePage() {
 
   return (
     <Wrapper>
-      <div className="">
-        <h1 className="font-montserrat font-medium sm:text-[60px] mt-[240px] mb-8 text-center">
+      <div>
+        <h1 className="font-montserrat font-medium sm:text-[60px] mt-[100px] mb-8 text-center">
           Прогноз погоды в вашем городе
         </h1>
         <Form setNewCityName={setNewCityName} />

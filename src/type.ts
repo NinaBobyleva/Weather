@@ -14,6 +14,7 @@ export type CityName = {
 
 export type WeatherDataType = {
   current: WeatherCurrentType;
+  daily: WeatherDailyType[];
   timezone_offset: number;
 };
 
@@ -25,7 +26,18 @@ export type WeatherCurrentType = {
   weather: WeatherType[];
 };
 
+export type WeatherDailyType = {
+  temp: TemperatureType;
+  dt: number;
+  weather: WeatherType[];
+};
+
 export type WeatherType = {
   description: string;
   icon: string;
 };
+
+export type TemperatureType = {
+  day: number;
+  night: number;
+}
