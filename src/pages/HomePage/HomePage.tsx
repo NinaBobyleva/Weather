@@ -24,9 +24,11 @@ export function HomePage() {
   return (
     <Wrapper>
       <div>
-        <h1 className="font-montserrat font-medium sm:text-[60px] mt-[100px] mb-8 text-center">
-          Прогноз погоды в вашем городе
-        </h1>
+        <div className="mt-14">
+          <h1 className="font-semibold text-[24px] text-center">
+            Прогноз погоды в вашем городе
+          </h1>
+        </div>
         <Form setNewCityName={setNewCityName} />
         <div>
           <WeatherBlock

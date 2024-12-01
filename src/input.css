@@ -4,7 +4,22 @@
 
 body {
   color: black;
-  background: #FAFAFA;
+  background: #fafafa;
+}
+
+@layer base {
+  .padding {
+    padding-left: calc(50% - 160px);
+    padding-right: calc(50% - 160px);
+  }
+  .paddingSM {
+    padding-left: calc(50% - 250px);
+    padding-right: calc(50% - 250px);
+  }
+  .paddingMD {
+    padding-left: calc(50% - 350px);
+    padding-right: calc(50% - 350px);
+  }
 }
 
 @layer base {
