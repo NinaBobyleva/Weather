@@ -16,28 +16,22 @@ export function Form({
   return (
     <form
       onSubmit={handleNewCityForm}
-      className="flex flex-row gap-4 justify-center mt-8"
+      className="flex flex-wrap justify-center w-[320px] gap-4 py-4"
     >
-      <div className="">
-        <div className="">
-          <input
-            onChange={(e) => setCityNameInput(e.target.value)}
-            type="search"
-            className=" w-[600px] border-2 rounded-2xl px-5 py-2 outline-none"
-            value={cityNameInput}
-            placeholder="Введите город"
-          />
-        </div>
-      </div>
+      <input
+        onChange={(e) => setCityNameInput(e.target.value)}
+        type="search"
+        className="border-2 rounded-2xl px-5 py-2 outline-none w-[314px]"
+        value={cityNameInput}
+        placeholder="Введите город"
+      />
 
-      <div className="">
-        <button
-          type="submit"
-          className=" font-sans bg-slate-400 px-7 py-2 rounded-2xl"
-        >
-          Найти
-        </button>
-      </div>
+      <button
+        type="submit"
+        className=" font-sans bg-slate-400 px-7 py-2 rounded-2xl"
+      >
+        Найти
+      </button>
     </form>
   );
 }

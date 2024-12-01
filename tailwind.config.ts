@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        main: "1440px",
+        'main': "1440px",
       },
       fontFamily: {
         'sans': ["Montserrat", "sans-serif"],
