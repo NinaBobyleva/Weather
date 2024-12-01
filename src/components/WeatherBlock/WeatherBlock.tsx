@@ -33,7 +33,7 @@ export function WeatherBlock({
   }, [latitude, longitude]);
 
   return (
-    <div className="flex flex-wrap xl:flex-nowrap justify-center gap-4 mb-10">
+    <div className="flex flex-wrap xl:flex-nowrap justify-center gap-4 sm:gap-8 mb-10">
       {weatherData?.current ? (
         <CurrentWeather
           cityName={cityName}

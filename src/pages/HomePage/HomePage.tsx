@@ -24,8 +24,8 @@ export function HomePage() {
   return (
     <Wrapper>
       <div>
-        <div className="mt-14">
-          <h1 className="font-semibold text-[24px] text-center">
+        <div className="mt-14 sm:mt-28 xl:mt-32">
+          <h1 className="font-semibold text-[24px] sm:text-[28px] md:text-[48px] text-center">
             Прогноз погоды в вашем городе
           </h1>
         </div>
