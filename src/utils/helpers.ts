@@ -1,8 +1,13 @@
-const months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+const months = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
 const days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
 
-export const timeFormat = (time: number) => {
-    const startTime = new Date(time * 1000);
-    const finalTime = days[startTime.getDay()] + " " + startTime.getDate() + " " + months[startTime.getMonth()];
-    return finalTime;
+export const timeFormat = ({time, timezone}: {time: number, timezone: number}) => {
+    const timezoneMoscow = 10800;
+    // Умножаем на 1000 чтобы перевести число в миллисекуды
+    const startTime = (timezone + (time - timezoneMoscow)) * 1000;
+    const newTime = new Date(startTime);
+    // console.log(newTime);
+    const finalTime =newTime.getDate() + " " + months[newTime.getMonth()];
+    const finalTimeDay = days[newTime.getDay()];
+    return [finalTimeDay, finalTime];
 };
