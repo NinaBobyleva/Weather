@@ -16,7 +16,7 @@ export function Form({
   return (
     <form
       onSubmit={handleNewCityForm}
-      className="flex flex-wrap xl:flex-nowrap justify-center gap-4 py-4 sm:py-8 md:py-12"
+      className="flex flex-wrap xl:flex-nowrap justify-center gap-4 py-8 sm:py-8 md:py-12"
     >
       <input
         onChange={(e) => setCityNameInput(e.target.value)}
