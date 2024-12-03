@@ -5,6 +5,7 @@ export default {
     extend: {
       screens: {
         'main': "1440px",
+        'xl': '1400px'
       },
       fontFamily: {
         'sans': ["Montserrat", "sans-serif"],

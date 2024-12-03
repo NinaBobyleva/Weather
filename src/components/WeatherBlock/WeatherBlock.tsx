@@ -1,19 +1,24 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { CurrentWeather } from "../CurrentWeather/CurrentWeather";
 import { WeatherDaily } from "../WeatherDaily/WeatherDaily";
 import { getCurrentWeather } from "../../api/api";
 import { WeatherDataType } from "../../type";
+import loader from '/public/img/Winter.gif';
 
 type WeatherBlockProp = {
   cityName: string | undefined;
   latitude: number | undefined;
   longitude: number | undefined;
+  isLoad: boolean;
+  setIsLoad: Dispatch<SetStateAction<boolean>>;
 };
 
 export function WeatherBlock({
   latitude,
   longitude,
   cityName,
+  isLoad,
+  setIsLoad
 }: WeatherBlockProp) {
   const [weatherData, setWeatherData] = useState<WeatherDataType | null>(null);
   // console.log("weatherData", weatherData);
@@ -23,6 +28,7 @@ export function WeatherBlock({
       getCurrentWeather({ latitude, longitude })
         .then((res) => {
           setWeatherData(res);
+          setIsLoad(false);
         })
         .catch((error) => {
           console.log(error);
@@ -33,7 +39,13 @@ export function WeatherBlock({
   }, [latitude, longitude]);
 
   return (
-    <div className="flex flex-wrap xl:flex-nowrap justify-center gap-4 mb-10">
+    <>
+    {isLoad ? (
+      <div className="flex justify-center mt-20">
+        <img src={loader} alt="Загрузка" />
+      </div>
+    ) : (
+      <div className="flex flex-wrap xl:flex-nowrap justify-center gap-4 sm:gap-8 md:gap-12 md:mt-[32px] mb-10">
       {weatherData?.current ? (
         <CurrentWeather
           cityName={cityName}
@@ -48,5 +60,7 @@ export function WeatherBlock({
         />
       ) : null}
     </div>
+    )}
+    </>
   );
 }

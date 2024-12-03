@@ -29,33 +29,31 @@ export function WeatherDailyItem({
   }
 
   return (
-    <li className="w-[100px]">
+    <li className="w-[100px] md:w-[150px]">
       <div className="">
         <div className="">
-          <p className="text-[12px] md:text-[22px] font-bold text-left">{correctTimeDay}</p>
-          <p className="text-[12px] md:text-[22px] text-left">{correctTime}</p>
+          <p className="text-[12px] md:text-[24px] font-bold text-left">{correctTimeDay}</p>
+          <p className="text-[12px] md:text-[24px] text-left">{correctTime}</p>
         </div>
         <div>
           <img
             src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
             alt={`${description}`}
-            className="relative right-4 h-[50px] w-[60px]"
+            className="relative right-4 h-[50px] md:h-[90px] w-[60px] md:w-[90px]"
           />
         </div>
         <div className="pb-[15px]">
           <div className="w-7 flex">
-            <p className="font-bold text-[12px] md:text-[20px]">{tempDay}</p>
-            <img src="/public/circle.png" alt="#" className="w-[10px] h-[20px] md:w-[16px] relative top-[3px]" />
+            <p className="font-bold text-[12px] md:text-[24px]">{tempDay}</p>
+            <img src="/public/img/circle.png" alt="#" className="w-[10px] md:w-[18px] h-[20px] md:h-[26px] relative top-[1px] md:top-[6px]" />
           </div>
           <div className="w-7 flex">
-            <p className="text-slate-500 text-[10px] md:text-[16px]">{tempNight}</p>
-            <img src="/public/circle.png" alt="#" className="w-[8px] h-[16px] md:w-[14px] opacity-25 relative top-[1px]" />
+            <p className="text-slate-500 text-[10px] md:text-[20px]">{tempNight}</p>
+            <img src="/public/img/circle.png" alt="#" className="w-[8px] md:w-[16px] h-[16px] md:h-[22px] opacity-25 relative md:top-[3px]" />
           </div>
         </div>
-        <p className="text-[10px] md:text-[16px] text-left">{description}</p>
+        <p className="text-[9px] md:text-[18px] text-left">{description}</p>
       </div>
     </li>
   );
 }
-
-// flex flex-col items-start
