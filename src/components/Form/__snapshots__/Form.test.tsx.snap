@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Компонент Form Успешный рендер компонента Form 1`] = `
+<form
+  className="flex flex-wrap xl:flex-nowrap justify-center gap-4 py-8 sm:py-8 md:py-12"
+  onSubmit={[Function]}
+>
+  <input
+    className="border-2 rounded-2xl px-5 py-2 outline-none w-[320px] sm:w-[500px] md:w-[700px]"
+    onChange={[Function]}
+    placeholder="Введите город"
+    type="search"
+    value=""
+  />
+  <button
+    className="bg-slate-400 px-7 py-2 rounded-2xl"
+    type="submit"
+  >
+    Найти
+  </button>
+</form>
+`;

@@ -13,12 +13,13 @@ export function HomePage() {
   const cityName = geoData?.local_names;
 
   useEffect(() => {
-    setIsLoad(true);
     const getDataGeo = async () => {
+      setIsLoad(true);
       getGeo(newCityName).then((res) => {
         setGeoData(res[0]);
       })
       .catch((error) => {
+        setIsLoad(false);
         console.log(error);
       })
     };

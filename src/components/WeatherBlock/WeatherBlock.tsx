@@ -31,6 +31,7 @@ export function WeatherBlock({
           setIsLoad(false);
         })
         .catch((error) => {
+          setIsLoad(false);
           console.log(error);
         });
     };
