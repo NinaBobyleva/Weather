@@ -7,20 +7,30 @@ import { GeoDataType } from "../../type";
 
 export function HomePage() {
   const [isLoad, setIsLoad] = useState(false);
+  const [error, setError] = useState("");
   const [newCityName, setNewCityName] = useState("");
-  const [geoData, setGeoData] = useState<GeoDataType | null>(null);
+  const [geoData, setGeoData] = useState<GeoDataType[]>([]);
+  // console.log("geoData", geoData);
 
-  const cityName = geoData?.local_names;
+  const cityName = geoData?.find((el) => el.local_names);
+  const lat = geoData?.find((el) => el.lat);
+  const lon = geoData?.find((el) => el.lon);
 
   useEffect(() => {
-    setIsLoad(true);
+    if (!newCityName) {
+      return;
+    }
     const getDataGeo = async () => {
-      getGeo(newCityName).then((res) => {
-        setGeoData(res[0]);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+      setIsLoad(true);
+      getGeo(newCityName)
+        .then((res) => {
+          setGeoData(res);
+          setError("");
+        })
+        .catch((error) => {
+          setError(error.message);
+          setIsLoad(false);
+        });
     };
 
     getDataGeo();
@@ -35,14 +45,18 @@ export function HomePage() {
           </h1>
         </div>
         <Form setNewCityName={setNewCityName} />
+        <p className="text-red-600 text-center text-2xl">{error && error}</p>
         <div>
-          <WeatherBlock
-            latitude={geoData?.lat}
-            longitude={geoData?.lon}
-            cityName={cityName?.ru}
-            isLoad={isLoad}
-            setIsLoad={setIsLoad}
-          />
+          {error ? null : (
+            <WeatherBlock
+              latitude={lat?.lat}
+              longitude={lon?.lon}
+              cityName={cityName?.local_names}
+              isLoad={isLoad}
+              setIsLoad={setIsLoad}
+              setError={setError}
+            />
+          )}
         </div>
       </div>
     </Wrapper>
