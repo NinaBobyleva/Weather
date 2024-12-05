@@ -1,15 +1,11 @@
-export type CityType = {
-  name: string;
+export type CityNameType = {
+  ru: string;
 };
 
 export type GeoDataType = {
   lat: number;
   lon: number;
-  local_names: CityName;
-};
-
-export type CityName = {
-  ru: string;
+  local_names: CityNameType;
 };
 
 export type WeatherDataType = {
@@ -40,4 +36,4 @@ export type WeatherType = {
 export type TemperatureType = {
   day: number;
   night: number;
-}
+};

@@ -1,8 +1,8 @@
-import { CityName, WeatherCurrentType } from "../../type";
+import { WeatherCurrentType } from "../../type";
 import { timeFormat } from "../../utils/helpers";
 
 type CurrentWeatherProp = {
-  cityName: CityName | undefined;
+  cityName: string | undefined;
   weatherCurrent: WeatherCurrentType | undefined;
   timezoneOffset: number;
 };
@@ -27,7 +27,7 @@ export function CurrentWeather({
     <div className="py-[32px] px-[4.5px] md:px-[10px] w-[320px] h-[270px] md:h-[400px] md:w-[550px] rounded-3xl bg-blue-100">
       <div className="flex flex-col items-center">
         <h3 className="text-[22px] text-center md:text-[32px] md:pb-1">
-          {cityName?.ru}
+          {cityName}
         </h3>
         <span className="text-[16px] md:text-[30px] text-slate-400 text-left">
           Сегодня {correctTime}

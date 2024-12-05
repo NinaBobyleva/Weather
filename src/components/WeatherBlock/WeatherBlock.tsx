@@ -2,11 +2,11 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { CurrentWeather } from "../CurrentWeather/CurrentWeather";
 import { WeatherDaily } from "../WeatherDaily/WeatherDaily";
 import { getWeather } from "../../api/api";
-import { CityName, WeatherDataType } from "../../type";
+import { CityNameType, WeatherDataType } from "../../type";
 import loader from "/public/img/Winter.gif";
 
 type WeatherBlockProp = {
-  cityName: CityName | undefined;
+  cityName: CityNameType | undefined;
   latitude: number | undefined;
   longitude: number | undefined;
   isLoad: boolean;
@@ -51,7 +51,7 @@ export function WeatherBlock({
         <div className="flex flex-wrap xl:flex-nowrap justify-center gap-4 sm:gap-8 md:gap-12 md:mt-[32px] mb-10">
           {weatherData?.current ? (
             <CurrentWeather
-              cityName={cityName}
+              cityName={cityName?.ru}
               weatherCurrent={weatherData?.current}
               timezoneOffset={weatherData?.timezone_offset}
             />
