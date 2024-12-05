@@ -10,7 +10,6 @@ export function HomePage() {
   const [error, setError] = useState("");
   const [newCityName, setNewCityName] = useState("");
   const [geoData, setGeoData] = useState<GeoDataType[]>([]);
-  // console.log("geoData", geoData);
 
   const cityName = geoData?.find((el) => el.local_names);
   const lat = geoData?.find((el) => el.lat);

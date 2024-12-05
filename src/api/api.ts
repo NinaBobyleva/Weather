@@ -8,7 +8,6 @@ export async function getGeo(newCityName: string) {
   );
 
   const response = await res.json();
-  // console.log(response);
 
   if (res.status === 400) {
     throw new Error("Введите город");
@@ -40,7 +39,7 @@ export async function getWeather({
   );
 
   const response = await res.json();
-  // console.log(response);
+ 
   if (res.status === 400) {
     throw new Error("Не правильный запрос.");
   }

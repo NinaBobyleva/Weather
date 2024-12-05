@@ -4,7 +4,6 @@ import { WeatherDaily } from "../WeatherDaily/WeatherDaily";
 import { getWeather } from "../../api/api";
 import { CityName, WeatherDataType } from "../../type";
 import loader from "/public/img/Winter.gif";
-// import { getErrorText } from "../../utils/getErrorText";
 
 type WeatherBlockProp = {
   cityName: CityName | undefined;
@@ -24,7 +23,6 @@ export function WeatherBlock({
   setError,
 }: WeatherBlockProp) {
   const [weatherData, setWeatherData] = useState<WeatherDataType | null>(null);
-  // console.log("weatherData", weatherData);
 
   useEffect(() => {
     const getDataCurrentWeather = async () => {
@@ -35,9 +33,7 @@ export function WeatherBlock({
           setError("");
         })
         .catch((error) => {
-          console.log(error);
           setError(error.message);
-          // getErrorText({ errorName: error.message, setError: setError });
           setIsLoad(false);
         });
     };

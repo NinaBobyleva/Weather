@@ -4,7 +4,7 @@ import { timeFormat } from "../../utils/helpers";
 type CurrentWeatherProp = {
   cityName: CityName | undefined;
   weatherCurrent: WeatherCurrentType | undefined;
-  timezoneOffset: number | undefined;
+  timezoneOffset: number;
 };
 
 export function CurrentWeather({
@@ -17,9 +17,9 @@ export function CurrentWeather({
 
   let [correctTime]: string[] = [];
 
-  if (weatherCurrent?.dt && timezoneOffset) {
+  if (weatherCurrent) {
     [correctTime] = timeFormat({
-      time: weatherCurrent?.dt,
+      time: weatherCurrent.dt,
       timezone: timezoneOffset,
     });
   }
