@@ -39,7 +39,7 @@ export function CurrentWeather({
             {weatherCurrent?.temp && Math.round(weatherCurrent?.temp)}
           </p>
           <img
-            src="/public/img/gradus.png"
+            src="./img/gradus.png"
             alt="Градусы Цельсия"
             className="w-[12px] h-[12px] md:w-[20px] md:h-[20px] relative top-[15px] md:top-[20px]"
           />

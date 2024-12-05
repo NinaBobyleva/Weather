@@ -41,11 +41,11 @@ export function WeatherDailyItem({
         <div className="pb-[15px]">
           <div className="w-7 flex">
             <p className="font-bold text-[12px] md:text-[24px]">{tempDay}</p>
-            <img src="/public/img/circle.png" alt="#" className="w-[10px] md:w-[18px] h-[20px] md:h-[26px] relative top-[1px] md:top-[6px]" />
+            <img src="./img/circle.png" alt="#" className="w-[10px] md:w-[18px] h-[20px] md:h-[26px] relative top-[1px] md:top-[6px]" />
           </div>
           <div className="w-7 flex">
             <p className="text-slate-500 text-[10px] md:text-[20px]">{tempNight}</p>
-            <img src="/public/img/circle.png" alt="#" className="w-[8px] md:w-[16px] h-[16px] md:h-[22px] opacity-25 relative md:top-[3px]" />
+            <img src="./img/circle.png" alt="#" className="w-[8px] md:w-[16px] h-[16px] md:h-[22px] opacity-25 relative md:top-[3px]" />
           </div>
         </div>
         <p className="text-[9px] md:text-[18px] text-left">{description}</p>
