@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Компонент CurrentWeather Успешный рендер компонента CurrentWeather 1`] = `
+<div
+  className="py-[32px] px-[4.5px] md:px-[10px] w-[320px] h-[270px] md:h-[400px] md:w-[500px] rounded-3xl bg-blue-100"
+>
+  <div
+    className="flex flex-col items-center"
+  >
+    <h3
+      className="text-[22px] md:text-[36px] md:pb-1"
+    >
+      Погода 
+      Москва
+    </h3>
+    <span
+      className="text-[16px] md:text-[32px] text-slate-400 text-left"
+    >
+      Сегодня 
+      ср
+    </span>
+  </div>
+  <div
+    className="flex flex-nowrap justify-between items-center gap-[5px] md:gap-[16px] md:py-2"
+  >
+    <div
+      className="flex w-[97px] md:w-[130px]"
+    >
+      <p
+        className="text-[42px] md:text-[60px] pl-8"
+      >
+        27
+      </p>
+      <img
+        alt="Градусы Цельсия"
+        className="w-[12px] h-[12px] md:w-[20px] md:h-[20px] relative top-[15px] md:top-[20px]"
+        src="/public/img/gradus.png"
+      />
+    </div>
+    <img
+      alt=""
+      className=" w-[97px] md:w-[130px]"
+      src="https://openweathermap.org/img/wn/@2x.png"
+    />
+    <p
+      className="text-[14px] w-[97px] text-center md:text-[26px] md:w-[150px]"
+    />
+  </div>
+  <div
+    className="flex flex-nowrap justify-around"
+  >
+    <div
+      className="flex flex-row items-center gap-1"
+    >
+      <img
+        alt="Скорость ветра"
+        className="w-[25px] md:w-[30px] h-[25px] md:h-[30px]"
+        src="./img/icons8-ветер-40.png"
+      />
+      <p
+        className="text-[28px] md:text-[32px]"
+      >
+        3
+         
+        м/с
+      </p>
+    </div>
+    <div
+      className="flex flex-row items-center gap-1"
+    >
+      <img
+        alt="Влажность"
+        className="w-[25px] md:w-[30px] h-[25px] md:h-[30px]"
+        src="./img/icons8-влажный-40.png"
+      />
+      <p
+        className="text-[28px] md:text-[32px]"
+      >
+        97
+        %
+      </p>
+    </div>
+  </div>
+</div>
+`;
