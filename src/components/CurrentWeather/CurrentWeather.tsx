@@ -1,10 +1,10 @@
-import { WeatherCurrentType } from "../../type";
+import { CityName, WeatherCurrentType } from "../../type";
 import { timeFormat } from "../../utils/helpers";
 
 type CurrentWeatherProp = {
-  cityName: string | undefined;
+  cityName: CityName | undefined;
   weatherCurrent: WeatherCurrentType | undefined;
-  timezoneOffset: number | undefined;
+  timezoneOffset: number;
 };
 
 export function CurrentWeather({
@@ -18,25 +18,25 @@ export function CurrentWeather({
 
   let [correctTime]: string[] = [];
 
-  if (weatherCurrent?.dt && timezoneOffset) {
+  if (weatherCurrent) {
     [correctTime] = timeFormat({
-      time: weatherCurrent?.dt,
+      time: weatherCurrent.dt,
       timezone: timezoneOffset,
     });
   }
   return (
-    <div className="py-[32px] px-[4.5px] md:px-[10px] w-[320px] h-[270px] md:h-[400px] md:w-[500px] rounded-3xl bg-blue-100">
+    <div className="py-[32px] px-[4.5px] md:px-[10px] w-[320px] h-[270px] md:h-[400px] md:w-[550px] rounded-3xl bg-blue-100">
       <div className="flex flex-col items-center">
-        <h3 className="text-[22px] md:text-[36px] md:pb-1">
-          Погода {cityName}
+        <h3 className="text-[22px] text-center md:text-[32px] md:pb-1">
+          {cityName?.ru}
         </h3>
-        <span className="text-[16px] md:text-[32px] text-slate-400 text-left">
+        <span className="text-[16px] md:text-[30px] text-slate-400 text-left">
           Сегодня {correctTime}
         </span>
       </div>
-      <div className="flex flex-nowrap justify-between items-center gap-[5px] md:gap-[16px] md:py-2">
+      <div className="flex flex-nowrap justify-center items-center gap-[5px] md:gap-[15px] md:py-2">
         <div className="flex w-[97px] md:w-[130px]">
-          <p className="text-[42px] md:text-[60px] pl-8">
+          <p className="text-[42px] md:text-[56px] pl-8">
             {weatherCurrent?.temp && Math.round(weatherCurrent?.temp)}
           </p>
           <img
@@ -50,11 +50,11 @@ export function CurrentWeather({
           alt={`${description}`}
           className=" w-[97px] md:w-[130px]"
         />
-        <p className="text-[14px] w-[97px] text-center md:text-[26px] md:w-[150px]">
+        <p className="text-[14px] w-[97px] text-center md:text-[22px] md:w-[150px]">
           {description}
         </p>
       </div>
-      <div className="flex flex-nowrap justify-around">
+      <div className="flex flex-nowrap justify-around md:pt-6">
         <div className="flex flex-row items-center gap-1">
           <img
             src="./img/icons8-ветер-40.png"

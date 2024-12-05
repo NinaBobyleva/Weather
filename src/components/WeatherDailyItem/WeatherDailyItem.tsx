@@ -3,7 +3,7 @@ import { timeFormat } from "../../utils/helpers";
 
 type WeatherDailyItemProp = {
   temperature: TemperatureType;
-  timezoneOffset: number | undefined;
+  timezoneOffset: number;
   time: number;
   weather: WeatherType[];
 };
@@ -19,14 +19,10 @@ export function WeatherDailyItem({
   const tempDay = Math.round(temperature.day);
   const tempNight = Math.round(temperature.night);
 
-  let [correctTimeDay, correctTime]: string[] = [];
-
-  if (time && timezoneOffset) {
-    [correctTimeDay, correctTime] = timeFormat({
-      time: time,
-      timezone: timezoneOffset,
-    });
-  }
+  const [correctTimeDay, correctTime] = timeFormat({
+    time: time,
+    timezone: timezoneOffset,
+  });
 
   return (
     <li className="w-[100px] md:w-[150px]">

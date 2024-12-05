@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+Мини приложение для просмотра прогноза погоды
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Ссылка на приложение: (https://dev--skyfitnesspro48.netlify.app/)
 
-Currently, two official plugins are available:
+## Установка
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Склонируйте репозиторий и установите зависимости
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Для запуска в development режиме выполните команду
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+npm run dev
 ```
+
+Приложение будет доступно по адресу: (http://localhost:5175/)
+
+При необходимости production сборки выполните команду
+
+```sh
+npm run build
+```
+
+## Описание:
+
+Небольшой проект для прохождения аттестации в Skypro.
+
+- В этом проекте реализован функционал для просмотра прогноза погоды. На странице нужно ввести город и вам будет доступен прогноз как для текущей погоды, так и для погоды на ближайшие пять дней. Из информации о текущей погоде на экран выводиться название города, день недели, температура, описани и иконка погодных условий, скорость ветра и влажность. Для прогноза на ближайшие пять дней из информации выводится день недели, дата, температура днем и вечером, иконка погодных условий и описание. При возникновении ошибки на экран выводиться стилизованный текст с ошибкой.
+
+
+### Технический стек приложения
+
+- React.js
+- TypeScript
+- Tailwind CSS
+- ESlint
+- Jest
+- React Testing Library
+- Netlify
+- Babel

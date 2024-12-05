@@ -6,7 +6,6 @@ export const timeFormat = ({time, timezone}: {time: number, timezone: number}) =
     // Умножаем на 1000 чтобы перевести число в миллисекуды
     const startTime = (timezone + (time - timezoneMoscow)) * 1000;
     const newTime = new Date(startTime);
-    // console.log(newTime);
     const finalTime =newTime.getDate() + " " + months[newTime.getMonth()];
     const finalTimeDay = days[newTime.getDay()];
     return [finalTimeDay, finalTime];
