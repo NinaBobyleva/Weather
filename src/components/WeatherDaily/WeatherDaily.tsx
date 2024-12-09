@@ -10,6 +10,7 @@ export function WeatherDaily({
   weatherDaily,
   timezoneOffset,
 }: WeatherDailyProp) {
+  // console.log(weatherDaily);
   return (
     <div>
       <div className="py-[26px] px-[4.5px] w-[320px] h-[280px] md:h-[400px] sm:w-[500px] md:w-[700px] rounded-3xl bg-blue-100">
@@ -20,7 +21,7 @@ export function WeatherDaily({
         </div>
         <div className="">
           <ul className="flex gap-1 md:gap-4 py-4 px-3 md:px-6">
-            {weatherDaily?.slice(1, -2).map((el, i) => (
+            {weatherDaily?.slice(0, -3).map((el, i) => (
               <WeatherDailyItem
                 key={i}
                 temperature={el.temp}

@@ -14,15 +14,17 @@ export function CurrentWeather({
 }: CurrentWeatherProp) {
   const icon = weatherCurrent?.weather.map((el) => el.icon);
   const description = weatherCurrent?.weather.map((el) => el.description);
+  // console.log(weatherCurrent);
 
-  let [correctTime]: string[] = [];
+  let correctTime: string[] = [];
 
   if (weatherCurrent) {
-    [correctTime] = timeFormat({
+    correctTime = timeFormat({
       time: weatherCurrent.dt,
       timezone: timezoneOffset,
     });
   }
+
   return (
     <div className="py-[32px] px-[4.5px] md:px-[10px] w-[320px] h-[270px] md:h-[400px] md:w-[550px] rounded-3xl bg-blue-100">
       <div className="flex flex-col items-center">
@@ -30,7 +32,7 @@ export function CurrentWeather({
           {cityName}
         </h3>
         <span className="text-[16px] md:text-[30px] text-slate-400 text-left">
-          Сегодня {correctTime}
+          Сейчас {correctTime[2]}
         </span>
       </div>
       <div className="flex flex-nowrap justify-center items-center gap-[5px] md:gap-[15px] md:py-2">

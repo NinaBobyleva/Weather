@@ -16,10 +16,10 @@ export function WeatherDailyItem({
 }: WeatherDailyItemProp) {
   const icon = weather?.map((el) => el.icon);
   const description = weather?.map((el) => el.description);
-  const tempDay = Math.round(temperature.day);
-  const tempNight = Math.round(temperature.night);
+  const tempMax = Math.round(temperature.max);
+  const tempMin = Math.round(temperature.min);
 
-  const [correctTimeDay, correctTime] = timeFormat({
+  const correctTime = timeFormat({
     time: time,
     timezone: timezoneOffset,
   });
@@ -28,8 +28,8 @@ export function WeatherDailyItem({
     <li className="w-[100px] md:w-[150px]">
       <div className="">
         <div className="">
-          <p className="text-[12px] md:text-[24px] font-bold text-left">{correctTimeDay}</p>
-          <p className="text-[12px] md:text-[24px] text-left">{correctTime}</p>
+          <p className="text-[12px] md:text-[24px] font-bold text-left">{correctTime[0]}</p>
+          <p className="text-[12px] md:text-[24px] text-left">{correctTime[1]}</p>
         </div>
         <div>
           <img
@@ -40,11 +40,11 @@ export function WeatherDailyItem({
         </div>
         <div className="pb-[15px]">
           <div className="w-7 flex">
-            <p className="font-bold text-[12px] md:text-[24px]">{tempDay}</p>
+            <p className="font-bold text-[12px] md:text-[24px]">{tempMax}</p>
             <img src="./img/circle.png" alt="#" className="w-[10px] md:w-[18px] h-[20px] md:h-[26px] relative top-[1px] md:top-[6px]" />
           </div>
           <div className="w-7 flex">
-            <p className="text-slate-500 text-[10px] md:text-[20px]">{tempNight}</p>
+            <p className="text-slate-500 text-[10px] md:text-[20px]">{tempMin}</p>
             <img src="./img/circle.png" alt="#" className="w-[8px] md:w-[16px] h-[16px] md:h-[22px] opacity-25 relative md:top-[3px]" />
           </div>
         </div>
