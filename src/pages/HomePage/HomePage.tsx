@@ -8,7 +8,7 @@ import { GeoDataType } from "../../type";
 export function HomePage() {
   const [isLoad, setIsLoad] = useState(false);
   const [error, setError] = useState("");
-  const [newCityName, setNewCityName] = useState("");
+  const [inputCityName, setInputCityName] = useState("");
   const [geoData, setGeoData] = useState<GeoDataType[]>([]);
 
   const cityName = geoData?.find((el) => el.local_names);
@@ -16,12 +16,12 @@ export function HomePage() {
   const lon = geoData?.find((el) => el.lon);
 
   useEffect(() => {
-    if (!newCityName) {
+    if (!inputCityName) {
       return;
     }
     const getDataGeo = async () => {
       setIsLoad(true);
-      getGeo(newCityName)
+      getGeo(inputCityName)
         .then((res) => {
           setGeoData(res);
           setError("");
@@ -33,7 +33,7 @@ export function HomePage() {
     };
 
     getDataGeo();
-  }, [newCityName]);
+  }, [inputCityName]);
 
   return (
     <Wrapper>
@@ -43,7 +43,7 @@ export function HomePage() {
             Прогноз погоды в вашем городе
           </h1>
         </div>
-        <Form setNewCityName={setNewCityName} />
+        <Form setInputCityName={setInputCityName} />
         <p className="text-red-600 text-center text-2xl">{error && error}</p>
         <div>
           {error ? null : (
