@@ -7,8 +7,8 @@ describe("Компонент WeatherDailyItem", () => {
       .create(
         <WeatherDailyItem
           temperature={{
-            day: 2.75,
-            night: -1.34,
+            max: 2.75,
+            min: -1.34,
           }}
           timezoneOffset={10800}
           time={1733302168}

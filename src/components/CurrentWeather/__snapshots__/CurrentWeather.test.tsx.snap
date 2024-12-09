@@ -2,39 +2,38 @@
 
 exports[`Компонент CurrentWeather Успешный рендер компонента CurrentWeather 1`] = `
 <div
-  className="py-[32px] px-[4.5px] md:px-[10px] w-[320px] h-[270px] md:h-[400px] md:w-[500px] rounded-3xl bg-blue-100"
+  className="py-[32px] px-[4.5px] md:px-[10px] w-[320px] h-[270px] md:h-[400px] md:w-[550px] rounded-3xl bg-blue-100"
 >
   <div
     className="flex flex-col items-center"
   >
     <h3
-      className="text-[22px] md:text-[36px] md:pb-1"
+      className="text-[22px] text-center md:text-[32px] md:pb-1"
     >
-      Погода 
       Москва
     </h3>
     <span
-      className="text-[16px] md:text-[32px] text-slate-400 text-left"
+      className="text-[16px] md:text-[30px] text-slate-400 text-left"
     >
-      Сегодня 
-      ср
+      Сейчас 
+      11:49
     </span>
   </div>
   <div
-    className="flex flex-nowrap justify-between items-center gap-[5px] md:gap-[16px] md:py-2"
+    className="flex flex-nowrap justify-center items-center gap-[5px] md:gap-[15px] md:py-2"
   >
     <div
       className="flex w-[97px] md:w-[130px]"
     >
       <p
-        className="text-[42px] md:text-[60px] pl-8"
+        className="text-[42px] md:text-[56px] pl-8"
       >
         27
       </p>
       <img
         alt="Градусы Цельсия"
         className="w-[12px] h-[12px] md:w-[20px] md:h-[20px] relative top-[15px] md:top-[20px]"
-        src="/public/img/gradus.png"
+        src="./img/gradus.png"
       />
     </div>
     <img
@@ -43,11 +42,11 @@ exports[`Компонент CurrentWeather Успешный рендер ком�
       src="https://openweathermap.org/img/wn/@2x.png"
     />
     <p
-      className="text-[14px] w-[97px] text-center md:text-[26px] md:w-[150px]"
+      className="text-[14px] w-[97px] text-center md:text-[22px] md:w-[150px]"
     />
   </div>
   <div
-    className="flex flex-nowrap justify-around"
+    className="flex flex-nowrap justify-around md:pt-6"
   >
     <div
       className="flex flex-row items-center gap-1"
