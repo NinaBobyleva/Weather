@@ -34,6 +34,6 @@ export type WeatherType = {
 };
 
 export type TemperatureType = {
-  day: number;
-  night: number;
+  max: number;
+  min: number;
 };

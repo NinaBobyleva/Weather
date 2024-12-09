@@ -5,7 +5,7 @@ describe("Компонент Form", () => {
   it("Успешный рендер компонента Form", () => {
     const setNewCityName = jest.fn();
     const component = renderer
-      .create(<Form setNewCityName={setNewCityName} />)
+      .create(<Form setInputCityName={setNewCityName} />)
       .toJSON();
     expect(component).toMatchSnapshot();
   });

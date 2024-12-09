@@ -20,7 +20,7 @@ export function WeatherDaily({
         </div>
         <div className="">
           <ul className="flex gap-1 md:gap-4 py-4 px-3 md:px-6">
-            {weatherDaily?.slice(1, -2).map((el, i) => (
+            {weatherDaily?.slice(0, -3).map((el, i) => (
               <WeatherDailyItem
                 key={i}
                 temperature={el.temp}
