@@ -3,8 +3,11 @@ const BASE_URL = "https://api.openweathermap.org/";
 const token = import.meta.env.VITE_APP_TOKEN;
 
 export async function getGeo(newCityName: string) {
+  // Количество возвращаемых местоположений
+  const limit = 1;
+
   const res = await fetch(
-    `${BASE_URL}geo/1.0/direct?q=${newCityName}&appid=${token}`
+    `${BASE_URL}geo/1.0/direct?q=${newCityName}&limit=${limit}&appid=${token}`
   );
 
   const response = await res.json();
