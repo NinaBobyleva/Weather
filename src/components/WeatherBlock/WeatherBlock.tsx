@@ -9,8 +9,6 @@ type WeatherBlockProp = {
   cityName: CityNameType | undefined;
   latitude: number | undefined;
   longitude: number | undefined;
-  isLoad: boolean;
-  setIsLoad: Dispatch<SetStateAction<boolean>>;
   setError: Dispatch<SetStateAction<string>>;
 };
 
@@ -18,13 +16,13 @@ export function WeatherBlock({
   latitude,
   longitude,
   cityName,
-  isLoad,
-  setIsLoad,
   setError,
 }: WeatherBlockProp) {
+  const [isLoad, setIsLoad] = useState(false);
   const [weatherData, setWeatherData] = useState<WeatherDataType | null>(null);
 
   useEffect(() => {
+    setIsLoad(true);
     const getDataCurrentWeather = async () => {
       getWeather({ latitude, longitude })
         .then((res) => {

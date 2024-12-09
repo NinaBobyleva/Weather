@@ -6,7 +6,6 @@ import { WeatherBlock } from "../../components/WeatherBlock/WeatherBlock";
 import { GeoDataType } from "../../type";
 
 export function HomePage() {
-  const [isLoad, setIsLoad] = useState(false);
   const [error, setError] = useState("");
   const [inputCityName, setInputCityName] = useState("");
   const [geoData, setGeoData] = useState<GeoDataType[]>([]);
@@ -20,7 +19,6 @@ export function HomePage() {
       return;
     }
     const getDataGeo = async () => {
-      setIsLoad(true);
       getGeo(inputCityName)
         .then((res) => {
           setGeoData(res);
@@ -28,7 +26,6 @@ export function HomePage() {
         })
         .catch((error) => {
           setError(error.message);
-          setIsLoad(false);
         });
     };
 
@@ -51,8 +48,6 @@ export function HomePage() {
               latitude={lat?.lat}
               longitude={lon?.lon}
               cityName={cityName?.local_names}
-              isLoad={isLoad}
-              setIsLoad={setIsLoad}
               setError={setError}
             />
           )}
