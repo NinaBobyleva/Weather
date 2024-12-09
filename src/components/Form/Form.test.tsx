@@ -3,9 +3,9 @@ import { Form } from "./Form";
 
 describe("Компонент Form", () => {
   it("Успешный рендер компонента Form", () => {
-    const setNewCityName = jest.fn();
+    const setInputCityName = jest.fn();
     const component = renderer
-      .create(<Form setInputCityName={setNewCityName} />)
+      .create(<Form setInputCityName={setInputCityName} />)
       .toJSON();
     expect(component).toMatchSnapshot();
   });

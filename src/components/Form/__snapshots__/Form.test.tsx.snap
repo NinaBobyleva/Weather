@@ -14,7 +14,6 @@ exports[`Компонент Form Успешный рендер компонен�
   />
   <button
     className="bg-slate-400 px-7 py-2 rounded-2xl"
-    type="submit"
   >
     Найти
   </button>
