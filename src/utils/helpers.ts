@@ -1,14 +1,33 @@
-const months = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
+const months = [
+  "янв",
+  "фев",
+  "мар",
+  "апр",
+  "мая",
+  "июн",
+  "июл",
+  "авг",
+  "сен",
+  "окт",
+  "ноя",
+  "дек",
+];
 const days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
 
-export const timeFormat = ({time, timezone}: {time: number, timezone: number}) => {
-    const timezoneMoscow = 10800;
-    // Умножаем на 1000 чтобы перевести число в миллисекуды
-    const startTime = (timezone + (time - timezoneMoscow)) * 1000;
-    const newTime = new Date(startTime);
-    const finalTimeDate = newTime.getDate() + " " + months[newTime.getMonth()];
-    const finalTimeDay = days[newTime.getDay()];
-    const finalTime = newTime.toLocaleTimeString().slice(0, -3);
+export const timeFormat = ({
+  time,
+  timezone,
+}: {
+  time: number;
+  timezone: number;
+}) => {
+  const timezoneMoscow = 10800;
+  // Умножаем на 1000 чтобы перевести число в миллисекуды
+  const startTime = (timezone + (time - timezoneMoscow)) * 1000;
+  const newTime = new Date(startTime);
+  const finalTimeDate = newTime.getDate() + " " + months[newTime.getMonth()];
+  const finalTimeDay = days[newTime.getDay()];
+  const finalTime = newTime.toLocaleTimeString().slice(0, -3);
 
-    return [finalTimeDay, finalTimeDate, finalTime];
+  return [finalTimeDay, finalTimeDate, finalTime];
 };

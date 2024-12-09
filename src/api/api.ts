@@ -14,7 +14,11 @@ export async function getGeo(newCityName: string) {
   }
 
   if (Array.isArray(response) && response.length === 0) {
-    throw new Error("Параметры введены не правильно. Попробуйте еще раз.");
+    throw new Error("Параметры введены не верно. Попробуйте еще раз.");
+  }
+
+  if (res.status === 500) {
+    throw new Error("Сервер не доступен.");
   }
 
   if (!res.ok) {
@@ -39,7 +43,7 @@ export async function getWeather({
   );
 
   const response = await res.json();
- 
+
   if (res.status === 400) {
     throw new Error("Не правильный запрос.");
   }
@@ -54,6 +58,10 @@ export async function getWeather({
 
   if (res.status === 429) {
     throw new Error("Превышен лимит запросов.");
+  }
+
+  if (res.status === 500) {
+    throw new Error("Сервер не доступен.");
   }
 
   if (!res.ok) {

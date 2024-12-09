@@ -14,7 +14,6 @@ export function CurrentWeather({
 }: CurrentWeatherProp) {
   const icon = weatherCurrent?.weather.map((el) => el.icon);
   const description = weatherCurrent?.weather.map((el) => el.description);
-  // console.log(weatherCurrent);
 
   let correctTime: string[] = [];
 

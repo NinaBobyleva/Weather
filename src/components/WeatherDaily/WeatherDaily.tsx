@@ -10,7 +10,6 @@ export function WeatherDaily({
   weatherDaily,
   timezoneOffset,
 }: WeatherDailyProp) {
-  // console.log(weatherDaily);
   return (
     <div>
       <div className="py-[26px] px-[4.5px] w-[320px] h-[280px] md:h-[400px] sm:w-[500px] md:w-[700px] rounded-3xl bg-blue-100">
