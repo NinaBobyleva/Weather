@@ -26,7 +26,7 @@ export function HomePage() {
         })
         .catch((error) => {
           setError(error.message);
-        });
+        })
     };
 
     getDataGeo();

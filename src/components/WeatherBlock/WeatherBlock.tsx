@@ -22,16 +22,17 @@ export function WeatherBlock({
   const [weatherData, setWeatherData] = useState<WeatherDataType | null>(null);
 
   useEffect(() => {
-    setIsLoad(true);
     const getDataCurrentWeather = async () => {
+      setIsLoad(true);
       getWeather({ latitude, longitude })
         .then((res) => {
           setWeatherData(res);
-          setIsLoad(false);
           setError("");
         })
         .catch((error) => {
           setError(error.message);
+        })
+        .finally(() => {
           setIsLoad(false);
         });
     };
